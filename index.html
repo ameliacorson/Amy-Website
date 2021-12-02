@@ -9,25 +9,22 @@
     <header>
         <div class="container-header">
             <h1> amy corson </h1>
+            <button class="nav-toggle" aria-label="toggle navigation"> 
+                <span class="hamburger"></span>
+            </button>
+            
+            <nav class = "mobile-nav">
+                <ul id="mobile-menu">
+                    <li><a class="navlink home" href="index.html">home</a></li>
+                    <li><a class="navlink about" href="about-me.html">about</a></li>
+                    <li><a class="navlink portfolio" href="portfolio.html">portfolio</a></li>
+                    <li><a class="navlink blog" href="blog.html"> blog</a></li>
+                    <li><a class="navlink contact" href="contact.html">contact</a></li>
+                </ul>
+            </nav> 
         </div>
     </header>
-    
-    <div class = "mobile-nav">
-        <div id="menuToggle">
-            <input type="checkbox" />
-              <span></span>
-              <span></span>
-              <span></span>
-          <ul id="mobile-menu">
-            <li><a class="home" href="index.html">home</a></li>
-            <li><a class="about" href="about-me.html">about</a></li>
-            <li><a class="portfolio" href="portfolio.html">portfolio</a></li>
-            <li><a class="blog" href="blog.html"> blog</a></li>
-            <li><a class="contact" href="contact.html">contact</a></li>
-          </ul>
-         </div>
-        
-    </div>
+
     <div class="fullscreen-nav home-fullscreen-nav">
             <a id="home-nav" href="#">home</a>
             <a href="about-me.html">about</a>
@@ -48,6 +45,7 @@
             <p class="social"><a href="#">github</a> // <a href="#">twitter</a></p>
         </div>
     </footer>
+    <script src='index.js'></script>
 </body>
 </html>
 

@@ -14,7 +14,7 @@ html, body{
     --fw-reg: 300;
     --fw-bold: 900;
     
-    --clr-light: #fff;
+    --clr-bkgd: #f8f5f0;;
     --clr-dark: #303030;
     --clr-accent: #16e0bd;
 
@@ -40,7 +40,7 @@ body {
     background-color: #f8f5f0;
     font-family: var(--ff-primary);
     display: grid;
-    grid-template: auto minmax(70vh, auto) 10vh / 100vh;
+    grid-template: auto auto 10vh / auto;
     grid-template-areas: 
     "header"
     "body"
@@ -56,10 +56,15 @@ body {
     margin: 0 auto;
     text-align: left;
 }
+
+.container-header {
+  display: flex;
+  justify-content: space-between;
+}
  
 .container {
-      overflow-y: scroll;
       grid-area: body;
+      overflow-x: scroll;
 
   }
 
@@ -135,23 +140,41 @@ footer {
     font-size: .75rem;
     color: rgb(165, 163, 163);
     text-decoration: none;;
-
 }
-.social a 
 
   /*---------
   ----nav----
   ---------*/
+  .fullscreen-nav {
+    display: none;
+}
+  .mobile-nav {
+    position: fixed;
+    margin:0;
+    background: var(--clr-bkgd);
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+
+    transform: translateX(100%);
+    transition: transform 250ms cubic-bezier(.5, 0, .5, 1);
+  }
+
+ 
 
   ul {
     padding: 0;
+    margin:0;
     list-style-type: none;
-    width: 100%
    
   }
 
  #mobile-menu a {
-     font-size: 1em;
+     font-size: 2em;
+     text-align: center;
+     height: 20vh;
      text-decoration: none;
      font-weight: 900;
      padding: 1em;
@@ -176,94 +199,65 @@ footer {
   
 /* hamburger toggle */
 
-.mobile-nav {
-  grid-row-start: 1;
-  grid-column-start: -1;
+.nav-toggle {
+  padding: .5em;
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+  position: absolute;
+  right: 3.7em;
+  top: 3.7em;
+  z-index: 1000;
 }
-  #menuToggle {
-    
-    display: flex;
-    flex-direction: column;
-    position: relative;
-    top: 25px;
-    right: 25px;
-    z-index: 1;
-    -webkit-user-select: none;
-    user-select: none;
-  }
-  
-  #menuToggle input {
-    display: flex;
-    width: 40px;
-    height: 32px;
-    position: absolute;
-    cursor: pointer;
-    opacity: 0;
-    z-index: 2;
-  }
-  
-  #menuToggle span {
-    display: flex;
-    width: 29px;
-    height: 2px;
-    margin-bottom: 5px;
-    position: relative;
-    background: #ffffff;
-    border-radius: 3px;
-    z-index: 1;
-    transform-origin: 5px 0px;
-    transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
-                background 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
-                opacity 0.55s ease;
-  }
-  
-  #menuToggle span:first-child {
-    transform-origin: 0% 0%;
-  }
-  
-  #menuToggle span:nth-last-child(2) {
-    transform-origin: 0% 100%;
-  }
-  
-  #menuToggle input:checked ~ span {
-    opacity: 1;
-    transform: rotate(45deg) translate(-3px, -1px);
-    background: #36383F;
-  }
-  #menuToggle input:checked ~ span:nth-last-child(3) {
-    opacity: 0;
-    transform: rotate(0deg) scale(0.2, 0.2);
-  }
-  
-  #menuToggle input:checked ~ span:nth-last-child(2) {
-    transform: rotate(-45deg) translate(0, -1px);
-  }
-  
-  #mobile-menu{
-    position: absolute;
-    width: 100vh;
-    height: 100vh;
-    margin: -50px 0 0 -50px;
-    padding: 25px;
-    padding-top: 100px;
-    background-color: #f8f5f0;
-    -webkit-font-smoothing: antialiased;
-    transform-origin: 0% 0%;
-    transform: translate(100%, 0);
-    transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
-  }
-  
-  #mobile-menu li {
-    transition-delay: 2s;
-  }
-  
-  #menuToggle input:checked ~ ul {
-    transform: none;
-  }
 
-.fullscreen-nav {
-    display: none;
+.hamburger {
+  display: block;
+  position: relative;
 }
+
+.hamburger,
+.hamburger::before,
+.hamburger::after {
+  background-color: var(--clr-bkgd);
+  width: 2em;
+  height: 3px;
+  border-radius: 1em;
+  transition: transform 250ms
+  
+}
+
+.hamburger::before,
+.hamburger::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+}
+
+.hamburger::before { top: 6px; }
+.hamburger::after { bottom: 6px; }
+
+.nav-open .mobile-nav {
+  transform: translateX(0);
+}
+
+.nav-open .nav-toggle {
+  position: fixed;
+}
+
+.nav-open .hamburger {
+  transform: rotate(.625turn)
+}
+
+.nav-open .hamburger::before {
+  transform: rotate(90deg) translateX(-6px);
+}
+
+.nav-open .hamburger::after {
+  opacity: 0;
+}
+
+
 
 @media (min-width: 650px) {
    
@@ -301,6 +295,9 @@ footer {
     
     .mobile-nav{
         display: none
+    }
+    .hamburger {
+      display: none;
     }
     
     .fullscreen-nav {

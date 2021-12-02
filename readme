@@ -1,11 +1,3 @@
-notes about the nav bar 
 
-Made by Erik Terwan
- * 24th of November 2015
- * MIT License
- 
-      A fake / hidden checkbox is used as click reciever,
-      so you can use the :checked selector on it.
-      -->
 
 change the grid for the nav/header so they overlap and then use zindexing to make it so the header overlaps the nav
