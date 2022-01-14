@@ -1,6 +1,39 @@
+
+:root {
+    --ff-primary: 'Nunito', sans-serif;
+    --ff-secondary: 'Roboto', sans-serif;
+    
+    --fw-reg: 300;
+    --fw-bold: 900;
+
+    /* night mode */
+    --clr-off-white: rgb(250, 249, 246);
+    --clr-dark-base: rgb(7, 34, 39);
+    --clr-dark-75op: rgba(7, 34, 39, .75);
+    --clr-teal-accent: rgb(53, 133, 139);
+    --clr-teal-50op: rgba(53, 133, 139, .5);
+    --clr-aqua-accent: rgb(79, 189, 186);
+    --clr-aqua-50op:rgba(79, 189, 186, .5);
+    --clr-light: rgb(174, 254, 255);
+
+    /* day mode */
+
+    
+    --fs-h1: 3rem;
+    --fs-h2: 2.25rem;
+    --fs-h3: 1.25rem;
+    --fs-body: 1rem;
+    
+    --bs: 0.25em 0.25em 0.75em rgba(0,0,0,.25),
+          0.125em 0.125em 0.25em rgba(0,0,0,.15);
+}
+
 body {
-    font-family: 'Nunito', sans-serif;
+    font-family: var(--ff-secondary);
     margin: 0;
+    background-color: var(--clr-off-white);
+    line-height: 1.4;
+    color: var(--clr-dark-75op)
 }
 
 .container{
@@ -19,9 +52,10 @@ header {
     height: 100vh;
     display: flex;
     justify-content: center;
-    background-image: linear-gradient(#072227 85%, #35858B 85%, #35858B 92%, #4FBDBA 92%, #4FBDBA 97%, #AEFEFF 97%);
-    color: white;
+    background-image: linear-gradient(var(--clr-dark-base) 85%, var(--clr-teal-accent) 85%, var(--clr-teal-accent) 92%, var(--clr-aqua-accent) 92%, var(--clr-aqua-accent) 97%, var(--clr-light) 97%);
+    color: var(--clr-off-white);
     position: relative;
+    overflow: hidden;
 }
 
 .header-container {
@@ -32,16 +66,29 @@ header {
 header h1 {
     margin: 0;
     font-size: 3rem;
-    text-shadow: 2px 2px #3c8a97;
+    text-shadow: 2px 2px var(--clr-teal-accent);;
+    font-family: var(--ff-primary);
 }
 
 header p {
-    margin: -.5em 0;
-    display: inline-block;
+    margin: 0;
+    display: inline;
     font-size: 1.5rem;
-    border-bottom: 3px solid #deeede;
+    color: rgba(255, 255, 255, .75);
     margin-bottom: 3em;
+    letter-spacing: 1px;
 }
+
+header p::after {
+    content: ""; 
+    display: block; 
+    width: 50%; 
+    border-bottom-style: solid;
+    border-width: 10px;
+    border-image: linear-gradient(45deg, rgba(53, 133, 139, .5), rgba(79, 189, 186, .5), rgba(174, 254, 255, .5)) 1; 
+} 
+
+
 
 header svg {
     margin: 0;
@@ -50,23 +97,121 @@ header svg {
     left: 0;
     bottom: 0;
     fill-opacity: 25%;
+    min-width: 1000px;
+    width: 100%;
 
 }
 
 .svg-1 {
-    fill: #35858B
+    fill: var(--clr-teal-accent)
 }
 
 .svg-2 {
-    fill: #4FBDBA;
+    fill: var(--clr-aqua-accent);
 }
 
 .svg-3 {
-    fill: #AEFEFF
+    fill: var(--clr-light)
 }
 
 section {
-    margin: 2em 4em;
+    min-height: 100vh;
+}
+
+section h2{
+    text-transform: uppercase;
+    font-size: 1.5rem;
+    letter-spacing: 2px;
+    color: var(--clr-dark-75op)
+}
+
+section h2::after{
+    content: ""; 
+    display: block; 
+    width: 25%; 
+    border-bottom-style: solid;
+    border-width: 10px;
+    border-image: linear-gradient(45deg, var(--clr-teal-accent), var(--clr-aqua-accent), var(--clr-light)) 1; 
 }
 
 
+
+.dark-section {
+    background: var(--clr-dark-base);
+}
+
+.dark-section h2 {
+    text-shadow: 1px 2px var(--clr-aqua-50op);
+    color: var(--clr-off-white);
+    margin-top: 4em;
+}
+
+.skill-btns {
+    margin-top: 4em;
+    display: flex;
+    justify-content: space-between;
+    border-radius: 5px 5px 0 0 ;
+    width: 95%
+    
+}
+.skills-section button {
+    padding: 10px 0;
+    border: none;
+    width: 48%;
+    font-weight: 700;
+    font-size: 1rem;
+    border-radius: 5px 5px 0 0 ;
+    cursor: pointer;
+    box-shadow: 
+        2px 1px rgba(98, 125, 126, 0.5),
+        3px 3px var(--clr-teal-50op);
+}
+
+.skill-btn-hidden {
+    background: rgba(255, 255, 255, .3);
+    box-shadow: 
+        inset
+        2px 2px rgba(190, 244, 245, 0.5),
+        3px 3px var(--clr-aqua-50op);
+}
+
+.skills {
+    padding: 2em 0 ;
+    min-height: 300px;
+    width: 100%;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    grid-gap: 15px 40px;
+    background: var(--clr-dark-base);
+}
+
+.skill-window {
+    padding-bottom: 6em;
+    width: 95%
+}
+
+.box-icon {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: var(--clr-off-white)
+}
+
+.box-icon i {
+    font-size: 70px;
+    text-shadow: 
+        2px 2px 1px rgba(174, 254, 255, .5),
+        3px 3px var(--clr-aqua-50op);
+}
+
+.box-icon p {
+    margin-top: 10px;
+    font-size: 1rem;
+    font-weight: 400;
+}
+
+.hidden {
+    display:none
+}
