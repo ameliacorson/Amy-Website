@@ -1,5 +1,5 @@
-// const navToggle = document.querySelector('.nav-toggle');
-// const navLinks = document.querySelectorAll('.nav__link')
+const navToggle = document.querySelector('.nav-toggle');
+const navLinks = document.querySelectorAll('.nav-link')
 const currentSkillsBtn = document.getElementById('current-skill-btn')
 const learningSkillsBtn = document.getElementById('learning-skill-btn')
 const currentSkillsContainer = document.getElementById("skill-list")
@@ -7,15 +7,15 @@ const learningSkillsContainer = document.getElementById("learning-skills")
 
 // navigation
 
-// navToggle.addEventListener('click', () => {
-//     document.body.classList.toggle('nav-open');
-// });
+navToggle.addEventListener('click', () => {
+    document.body.classList.toggle('nav-open');
+});
 
-// navLinks.forEach(link => {
-//     link.addEventListener('click', () => {
-//         document.body.classList.remove('nav-open');
-//     })
-// })
+navLinks.forEach(link => {
+    link.addEventListener('click', () => {
+        document.body.classList.remove('nav-open');
+    })
+})
 
 // skills
 
