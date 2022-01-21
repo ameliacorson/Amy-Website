@@ -4,6 +4,25 @@ const currentSkillsBtn = document.getElementById('current-skill-btn')
 const learningSkillsBtn = document.getElementById('learning-skill-btn')
 const currentSkillsContainer = document.getElementById("skill-list")
 const learningSkillsContainer = document.getElementById("learning-skills")
+const themeToggle = document.getElementById("theme-toggle")
+const header = document.getElementById("home")
+const aboutSection = document.getElementById("about")
+const skillsSection = document.getElementById("skills")
+const portfolioSection = document.getElementById("portfolio")
+const footer = document.getElementById("footer")
+
+// theme
+
+function toggleTheme () {
+    header.classList.toggle("daymode")
+    aboutSection.classList.toggle("daymode")
+    skillsSection.classList.toggle("daymode")
+    portfolioSection.classList.toggle("daymode")
+    footer.classList.toggle("daymode")
+    themeToggle.classList.toggle("active")
+}
+
+themeToggle.addEventListener('click', toggleTheme)
 
 // navigation
 
@@ -36,3 +55,4 @@ function toggleToLearning() {
 
 currentSkillsBtn.addEventListener('click', toggleToSkills)
 learningSkillsBtn.addEventListener('click', toggleToLearning)
+
