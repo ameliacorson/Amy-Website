@@ -61,14 +61,18 @@ header {
   height: 100vh;
   display: flex;
   justify-content: center;
-  background-image: linear-gradient(
+  background-color: var(--clr-dark-base);
+  background-image: url(./img/stars-removebg-preview.png);
+  /* background-image: linear-gradient(
     var(--clr-dark-base) 85%,
     var(--clr-teal-accent) 85%,
     var(--clr-teal-accent) 92%,
     var(--clr-aqua-accent) 92%,
     var(--clr-aqua-accent) 97%,
     var(--clr-light) 97%
-  );
+  ); */
+  background-repeat: repeat-x;
+  background-size: fill;
   color: var(--clr-off-white);
   position: relative;
   overflow: hidden;
@@ -167,12 +171,12 @@ header.daymode .fa-sun {
     var(--clr-light) 97%
   );
   opacity: 0;
-  transition: opacity 300ms ease-in-out;
+  transition: opacity 500ms ease-in-out;
 }
 
 header.daymode .theme-transition-background {
   opacity: 100;
-  transition: opacity 300ms ease-in-out;
+  transition: opacity 500ms ease-in-out;
 }
 
 .fa-cloud {
@@ -358,6 +362,12 @@ nav {
   z-index: 1000;
 }
 
+header.daymode .hamburger,
+header.daymode .hamburger::before,
+header.daymode .hamburger::after {
+  box-shadow: 2px 3px var(--clr-day-drk);
+}
+
 .hamburger::before,
 .hamburger::after {
   content: "";
@@ -447,6 +457,19 @@ section.daymode h2::after {
     1;
 }
 
+header img {
+  width: 50px;
+  object-fit: fill;
+  fill: white;
+  fill-opacity: .5;
+  position: absolute;
+  top: 0;
+  left:0;
+}
+header img:hover{
+  background: blue;
+}
+
 .dark-section {
   background: var(--clr-dark-base);
   transition: background-color 300ms ease-in;
@@ -491,9 +514,16 @@ section.daymode .skills {
   transition: all 300ms;
 }
 
-.skills-section.daymode .skill-btn-hidden {
-  box-shadow: inset 2px 2px rgba(170, 50, 2, 0.5), 3px 3px var(--clr-day-orange);
+.skills-section.daymode .skill-btns button {
+  color: var(--clr-day-orange)
 }
+
+.skills-section.daymode .skill-btns .skill-btn-hidden {
+  box-shadow: inset 2px 2px rgba(170, 50, 2, 0.5), 3px 3px var(--clr-day-orange);
+  color: rgb(250, 242, 234);
+}
+
+
 
 .skills {
   padding: 2em 0;
