@@ -55,4 +55,3 @@ function toggleToLearning() {
 
 currentSkillsBtn.addEventListener('click', toggleToSkills)
 learningSkillsBtn.addEventListener('click', toggleToLearning)
-
