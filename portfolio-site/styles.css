@@ -77,6 +77,17 @@ header {
   transition: opacity 300ms;
 }
 
+header.project-header {
+  height: 50vh;
+  align-items: center;
+
+}
+
+header.project-header h1 {
+  margin-top: 50px;
+}
+
+
 /* theme toggle */
 
 .sticky-bar {
@@ -180,7 +191,7 @@ header.daymode .theme-transition-background {
 }
 
 .fa-asterisk {
-  opacity: 65%;
+  opacity: 55%;
   border-radius: 50%;
   position: absolute;
   transition: background-color 3s ease-out, box-shadow 3s ease-out, opacity 3s ease-out, transform 1s ease-out; 
@@ -325,7 +336,7 @@ nav {
   right: 0;
   z-index: 100;
 
-  transform: translateY(100%);
+  transform: translateY(105%);
   transition: transform 250ms cubic-bezier(0.5, 0, 0.5, 1);
 }
 
@@ -458,6 +469,10 @@ header svg {
   width: 100%;
 }
 
+header.project-header svg{
+  display: none;
+}
+
 header.daymode svg {
   fill-opacity: 40%;
 }
@@ -488,6 +503,7 @@ section {
 }
 
 section h2 {
+  margin-top: 2em;
   text-transform: uppercase;
   font-size: 1.5rem;
   letter-spacing: 2px;
@@ -534,6 +550,90 @@ section.daymode .skills {
   text-shadow: 1px 2px var(--clr-aqua-50op);
   color: var(--clr-off-white);
   margin-top: 4em;
+}
+
+/* about section */
+
+section.about-section {
+  padding: 3em 0;
+}
+
+section.about-section p {
+  line-height: 1.5;
+}
+
+section a {
+  color: var(--clr-teal-accent);
+  text-decoration: none;
+  font-weight: bold;
+  cursor: pointer;
+  transition: color 300ms ease;
+}
+
+section a:hover{
+  color: var(--clr-aqua-accent);
+  transition: color 300ms ease;
+}
+
+section.daymode a {
+  color: var(--clr-day-orange);
+}
+
+section.daymode a:hover {
+  color: var(--clr-day-gold);
+}
+
+section.project-about img {
+  border-radius: 10px;
+  box-shadow: var(--bs);
+}
+
+
+section.project-about h3 {
+  margin-top: 2em;
+  text-transform: uppercase;
+  font-size: 1.25 rem;
+  letter-spacing: 2px;
+  color: var(--clr-dark-75op);
+  border-bottom: #404040 solid 3px;
+
+}
+
+img.project-cover-img {
+  margin: 2em 0;
+  align-self: center;
+  width: 75%;
+  object-fit: cover;
+}
+
+.project-img-multiple {
+  margin: 2em 0;
+  display: grid;
+  align-items: start;
+  grid-gap: 1em;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+}
+
+.project-img-multiple img {
+  width: 100%;
+}
+
+.project-desc-img {
+  width: 45%;
+  margin: 1em 2.5em 1em 0;
+  float: left;
+}
+
+.float-text {
+  margin-bottom: 2em;
+}
+
+@media (max-width: 550px) {
+  .project-desc-img {
+    float: none;
+    width: 100%;
+
+  }
 }
 
 /* skills section */
@@ -689,21 +789,35 @@ section.daymode .project-buttons button {
   align-items: center;
 }
 
-.project-buttons button {
+.project-buttons a {
+  background: var(--clr-teal-accent);
+  color: var(--clr-off-white);
   font-size: 1rem;
   cursor: pointer;
   border: none;
   border-radius: 5px;
   padding: 8px 0;
   width: 45%;
+  margin-right: 7px;
+  text-align: center;
+  transition: all 200ms ease-in;
 }
 
-.project-buttons button:hover {
-  background: var(--clr-aqua-accent)
+section.daymode .project-buttons a {
+  background-color: var(--clr-day-orange);
+  color: var(--clr-off-white);
+  transition: all 200ms ease-in;
+
 }
 
-section.daymode .project-buttons button:hover {
+.project-buttons a:hover {
+  background: var(--clr-aqua-accent);
+  color: var(--clr-off-white)
+}
+
+section.daymode .project-buttons a:hover {
   background: var(--clr-day-gold);
+  color: var(--clr-off-white);
   transition: background-color 200ms ease-in;
 }
 
@@ -723,7 +837,7 @@ section.daymode .project-buttons button:hover {
   }
   .project-buttons {
     width: 100;
-    margin: 0
+    margin: 0;
   }
 
   .project img {
