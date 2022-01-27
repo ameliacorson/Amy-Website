@@ -697,12 +697,21 @@ section.daymode .box-icon i {
   border-bottom: 1px solid rgba(128, 128, 128, .25);
 }
 
-.project img {
+
+img.launch-site {
   width: 200px;
   height: 200px;
   object-fit: fill;
   border-radius: 10px;
   box-shadow: var(--bs);
+  transition: all 300ms ease;
+}
+
+img.launch-site:hover {
+  transform: translateY(-10px);
+  box-shadow: 0.3em 0.7em 0.8em rgba(0, 0, 0, 0.45),
+  0.150em 0.5em 0.3em rgba(0, 0, 0, 0.25);
+  transition: all 300ms ease;
 }
 
 .project-description {
