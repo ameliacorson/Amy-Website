@@ -14,12 +14,13 @@ const footer = document.getElementById("footer")
 // theme
 
 function toggleTheme () {
+    themeToggle.classList.toggle("active")
     header.classList.toggle("daymode")
     aboutSection.classList.toggle("daymode")
     skillsSection.classList.toggle("daymode")
     portfolioSection.classList.toggle("daymode")
     footer.classList.toggle("daymode")
-    themeToggle.classList.toggle("active")
+    
 }
 
 themeToggle.addEventListener('click', toggleTheme)

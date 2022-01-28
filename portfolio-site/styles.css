@@ -195,7 +195,8 @@ header.daymode .theme-transition-background {
   border-radius: 50%;
   position: absolute;
   transition: background-color 3s ease-out, box-shadow 3s ease-out, opacity 3s ease-out, transform 1s ease-out; 
-  box-shadow: 0px 0px 0px 5px rgba(255, 255, 255, 0)
+  box-shadow: 0px 0px 0px 5px rgba(255, 255, 255, 0);
+  z-index: 5;
 }
 .fa-asterisk:hover {
   opacity: 95%;
@@ -230,13 +231,14 @@ header.daymode .fa-asterisk {
   position: absolute;
   color: var(--clr-off-white);
   opacity: 35%;
-  transition: opactiy 500ms ease-in;
+  transition: all 500ms ease-in;
   padding: 5px;
+  z-index: 5;
 }
 
 .fa-cloud:hover{
   opacity: 65%;
-  transition: opacity 300ms ease-in;
+  transition: all 300ms ease-in;
 }
 
 
@@ -614,8 +616,6 @@ footer.daymode a:hover {
 
 .skill-btn-hidden {
   background: rgba(255, 255, 255, 0.3);
-  box-shadow: inset 2px 2px rgba(190, 244, 245, 0.5),
-    3px 3px var(--clr-aqua-50op);
   transition: all 300ms;
 }
 
@@ -624,7 +624,6 @@ footer.daymode a:hover {
 }
 
 .skills-section.daymode .skill-btns .skill-btn-hidden {
-  box-shadow: inset 2px 2px rgba(170, 50, 2, 0.5), 3px 3px var(--clr-day-orange);
   color: rgb(250, 242, 234);
 }
 
@@ -685,6 +684,17 @@ section.daymode .box-icon i {
 
 .projects-section h3 {
   margin: 0;
+}
+
+span.construction {
+  background: var(--clr-day-orange);
+  font-size: .75em;
+  border-radius: 10px;
+  padding: 2px 7px;
+  color: white;
+  font-weight: 700;
+  margin-left: 10px;
+
 }
 
 .project {
@@ -896,11 +906,12 @@ footer .dark-section{
     width: 100;
   }
 
-  .project img {
+  img.launch-site  {
    width: 90%;
    height: 100%;
    object-fit: cover;
    order: 0;
    margin-bottom: 3em;
+   align-self: start;
   }
 } 
