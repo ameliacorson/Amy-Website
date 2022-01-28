@@ -610,7 +610,7 @@ footer.daymode a:hover {
   font-size: 1rem;
   border-radius: 5px 5px 0 0;
   cursor: pointer;
-
+  color:var(--clr-dark-base);
   transition: all 300ms;
 }
 
@@ -902,8 +902,10 @@ footer .dark-section{
     font-size: 1.7rem;
   }
   
+
   .project-buttons {
     width: 100;
+    margin-bottom: 2em;
   }
 
   img.launch-site  {
