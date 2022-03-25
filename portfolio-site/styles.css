@@ -863,14 +863,7 @@ footer.daymode a:hover {
 }
 
 .box-icon i {
-  /* text-shadow: 1px 1px 1px rgba(174, 254, 255, 0.7),
-    3px 3px var(--clr-aqua-50op); */
   font-size: 50px;
-}
-
-section.daymode .box-icon i {
-  text-shadow: 2px 2px 1px rgba(250, 208, 94, 0.5),
-    3px 3px var(--clr-day-orange);
 }
 
 .box-icon p {
