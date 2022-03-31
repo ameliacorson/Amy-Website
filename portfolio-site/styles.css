@@ -1186,23 +1186,23 @@ img.project-cover-img {
 footer .dark-section {
   width: 100%;
   margin: 0;
+  
 }
 
-.contact-info {
-  color: rgba(255, 255, 255, 0.7);
-  margin-bottom: 4em;
-  display: flex;
-  width: 100%;
+.credit {
+    margin: 1em 0;
+    padding: 1.5em 0;
+    color: var(--clr-off-white);
+    opacity: 65%;
+}
+.credit p {
+  margin: 0;
 }
 
-.contact-item {
-  margin-right: 1em;
-  font-weight: 700;
+.credit i {
+margin-right: 10px;
 }
 
-.contact-item i {
-  margin-right: 5px;
-}
 
 @media (max-width: 650px) {
   .project {
