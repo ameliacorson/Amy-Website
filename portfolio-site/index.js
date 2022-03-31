@@ -11,6 +11,27 @@ const skillsSection = document.getElementById("skills")
 const portfolioSection = document.getElementById("portfolio")
 const footer = document.getElementById("footer")
 
+
+const options = {
+    root: null,
+    threshold: 0,
+    rootMargin: "-150px"
+}
+
+const observer = new IntersectionObserver(function(entries, observer) {
+    entries.forEach(entry => {
+        if(entry.isIntersecting) {
+            entry.target.classList.remove("scrolled")
+        } else {
+            entry.target.classList.add("scrolled")
+        }
+
+        console.log(header.classList)
+    })
+}, options)
+
+observer.observe(header)
+
 // theme
 
 function toggleTheme () {

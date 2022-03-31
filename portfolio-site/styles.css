@@ -93,6 +93,7 @@ header.project-header h1 {
   top: 32px;
   right: 65px;
   align-items: center;
+  transition: all 250ms ease-in-out;
 }
 
 .toggle-btn {
@@ -107,8 +108,10 @@ header.project-header h1 {
   cursor: pointer;
 }
 
+header.daymode.scrolled .toggle-btn.active,
 .toggle-btn.active {
   background: var(--clr-day-gold);
+  transition: all 250ms ease-in-out;
 }
 
 .toggle-btn.active {
@@ -219,43 +222,55 @@ header.daymode .theme-transition-background {
   left: 10%;
 }
 .ast-4 {
-  font-size: 6px;
+  font-size: 10px;
   top: 20%;
   left: 14%;
+  transform: rotate(15deg);
 }
 .ast-5 {
   font-size: 12px;
   top: 60%;
   right: 15%;
+  transform: rotate(13deg);
+  font-size: 4px;
 }
 .ast-6 {
   left: 33%;
   top: 25%;
+  font-size: 9px;
+  transform: rotate(15deg);
 }
 .ast-7 {
   right: 5%;
   top: 15%;
+  font-size: 7px;
+  transform: rotate(23deg);
 }
 .ast-8 {
   left: 5%;
   top: 10%;
+  font-size: 9px;
 }
 .ast-9 {
   right: 35%;
   top: 20%;
+  font-size: 7px;
   transform: rotate(10deg);
 }
 .ast-10 {
   top: 7%;
   right: 15%;
+  font-size: 7px;
 }
 .ast-11 {
   top: 45%;
   left: 5%;
+  font-size: 7px;
 }
 .ast-12 {
   right: 30%;
   top: 46%;
+  font-size: 4px;
 }
 .ast-13 {
   font-size: 7px;
@@ -270,6 +285,12 @@ header.daymode .theme-transition-background {
 .ast-15 {
   top: 4%;
   left: 50%;
+  font-size: 6px;
+}
+
+header.daymode .circle {
+  opacity: 0;
+  transition: all 300ms ease-in;
 }
 
 .circle {
@@ -297,9 +318,9 @@ header.daymode .theme-transition-background {
   width: 3px;
   height: 3px;
 }
-.circle-2 {
-  top: 33%;
-  right: 80%;
+.circle-2- {
+  top: 20%;
+  right: 10%;
   width: 5px;
   height: 5px;
 }
@@ -321,11 +342,36 @@ header.daymode .theme-transition-background {
   width: 3px;
   height: 3px;
 }
-/* .circle-6{ top: ; right: ; width: ; height: ;}
-.circle-7{ top: ; right: ; width: ; height: ;}
-.circle-8{ top: ; right: ; width: ; height: ;}
-.circle-9{ top: ; right: ; width: ; height: ;}
-.circle-10{ top: ; right: ; width: ; height: ;} */
+.circle-6 {
+  top: 30%;
+  right: 5%;
+  width: 5px;
+  height: 5px;
+}
+.circle-7 {
+  top: 13%;
+  right: 66%;
+  width: 4px;
+  height: 4px;
+}
+.circle-8 {
+  top: 3%;
+  right: 90%;
+  width: 3px;
+  height: 3px;
+}
+.circle-9 {
+  top: 33%;
+  right: 98%;
+  width: 5px;
+  height: 5px;
+}
+.circle-10 {
+  top: 37%;
+  right: 70%;
+  width: 3px;
+  height: 3px;
+}
 
 header.daymode .fa-star {
   transform: translateY(-20px);
@@ -651,6 +697,56 @@ header.daymode .svg-3 {
   fill: var(--clr-aqua-accent);
 }
 
+header.scrolled .sticky-bar {
+  transform: translateY(-10px);
+  z-index: 20;
+}
+
+.mobile-bar {
+  opacity: 0%;
+  position: fixed;
+  width: 100%;
+  height: 80px;
+  background: var(--clr-teal-accent);
+  top: 0;
+
+  transition: all 250ms ease-in-out;
+}
+
+.mobile-bar h1 {
+  font-size: 2rem;
+  margin: .5em;
+  text-transform: lowercase;
+}
+
+header.scrolled button.nav-toggle {
+  transform: translateY(-10px);
+  transition: all 250ms ease-in-out;
+}
+
+header.scrolled .toggle-btn {
+  background: var(--clr-dark-base);
+  transition: all 250ms ease-in-out;
+}
+
+header.scrolled .mobile-bar {
+  opacity: 100%;
+  transition: all 250ms ease-in-out;
+  
+}
+
+header.scrolled.daymode .mobile-bar {
+  background-color: var(--clr-day-orange);
+  transition: all 250ms ease-in-out;
+  z-index: 15;
+}
+
+header.scrolled .hamburger,
+header.scrolled .hamburger::before,
+header.scrolled .hamburger::after {
+  box-shadow: none;
+}
+
 @media (max-width: 500px) {
   header {
     height: 85vh;
@@ -665,46 +761,13 @@ header.daymode .svg-3 {
 
   header .CTA-buttons {
     margin-top: 2em;
-  } 
-
-   .sticky-bar {
-    top: 18px;
-    z-index: 20;
-  }
-
-  button.nav-toggle {
-    top: 2em;
-    
-  }
-
-  .toggle-btn {
-    background: var(--clr-dark-base);
-  }
-
-  .mobile-bar {
-    position: fixed;
-    width: 100%;
-    height: 70px;
-    background: var(--clr-teal-accent);
-    top: 0;
-    z-index: 15;
-  }
-
-  header.daymode .mobile-bar {
-    background-color: var(--clr-day-orange);
-  }
-
-  .hamburger,
-  .hamburger::before,
-  .hamburger::after {
-    box-shadow: none;
   }
 
   .fa-star {
     display: none;
   }
   .circle {
-    display:none;
+    display: none;
   }
 
   .cloud-1 {
@@ -776,7 +839,7 @@ section.daymode .skills {
 /* about section */
 
 section.about-section {
-  padding: 3em 0;
+  padding: 6em 0;
 }
 
 section a,
@@ -933,7 +996,6 @@ img.launch-site:hover {
   flex-wrap: wrap;
   padding: 0;
   margin-bottom: 2em;
-  
 }
 /* .project-buttons button {
   background: var(--clr-teal-accent);
@@ -952,7 +1014,6 @@ img.launch-site:hover {
   color: var(--clr-teal-accent);
   margin: 5px 6px 0 0;
   font-weight: 700;
-  
 }
 
 section.daymode .project-buttons button {
