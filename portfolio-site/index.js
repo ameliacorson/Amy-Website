@@ -32,6 +32,8 @@ const observer = new IntersectionObserver(function (entries, observer) {
 
 observer.observe(header);
 
+
+
 // copy email to clipboard
 
 emailBtn.addEventListener("click", () => {
@@ -52,6 +54,57 @@ function toggleTheme() {
 }
 
 themeToggle.addEventListener("click", toggleTheme);
+
+//stars animation 
+
+const circles = document.getElementsByClassName("circle")
+const stars = document.getElementsByClassName("fa-star")
+
+
+
+function fireCircles() {
+  let randomNum = Math.floor((Math.random())*10)
+  for(let i = 0; i < circles.length; i++) {
+    if (circles[randomNum] === circles[i]) {
+      circles[i].classList.add("fired")
+      setTimeout(() => circles[i].classList.remove("fired"), 700)
+    }
+  }
+}
+
+function fireStars() {
+  let randomNum = Math.floor((Math.random())*15)
+  for(let i = 0; i < stars.length; i++) {
+    if (stars[randomNum] === stars[i]) {
+      stars[i].classList.add("fired")
+      setTimeout(() => stars[i].classList.remove("fired"), 1200)
+    }
+  }
+}
+
+let circleInterval
+let star
+
+if(!header.classList.contains("daymode")){
+  circleInterval = setInterval(fireCircles, 300)
+  starInterval = setInterval(fireStars, 400)
+}else if (header.classList.contains("daymode")){
+  clearInterval(circleInterval, starInterval)
+}
+
+// theme on start
+
+const today = new Date()
+const hour = today.getHours()
+function setThemeByTime() {
+  if(hour > 19 || hour < 6 ) {
+    return
+  } else {
+    toggleTheme()
+  }
+}
+
+setThemeByTime()
 
 // navigation
 
