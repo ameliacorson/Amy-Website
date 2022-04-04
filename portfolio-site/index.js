@@ -32,6 +32,8 @@ const observer = new IntersectionObserver(function (entries, observer) {
 
 observer.observe(header);
 
+
+
 // copy email to clipboard
 
 emailBtn.addEventListener("click", () => {
@@ -80,14 +82,29 @@ function fireStars() {
   }
 }
 
+let circleInterval
+let star
+
 if(!header.classList.contains("daymode")){
-  const circleInterval = setInterval(fireCircles, 300)
-  const starInterval = setInterval(fireStars, 400)
+  circleInterval = setInterval(fireCircles, 300)
+  starInterval = setInterval(fireStars, 400)
 }else if (header.classList.contains("daymode")){
   clearInterval(circleInterval, starInterval)
 }
 
-console.log(circles)
+// theme on start
+
+const today = new Date()
+const hour = today.getHours()
+function setThemeByTime() {
+  if(hour > 19 || hour < 6 ) {
+    return
+  } else {
+    toggleTheme()
+  }
+}
+
+setThemeByTime()
 
 // navigation
 
