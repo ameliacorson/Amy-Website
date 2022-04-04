@@ -53,6 +53,42 @@ function toggleTheme() {
 
 themeToggle.addEventListener("click", toggleTheme);
 
+//stars animation 
+
+const circles = document.getElementsByClassName("circle")
+const stars = document.getElementsByClassName("fa-star")
+
+
+
+function fireCircles() {
+  let randomNum = Math.floor((Math.random())*10)
+  for(let i = 0; i < circles.length; i++) {
+    if (circles[randomNum] === circles[i]) {
+      circles[i].classList.add("fired")
+      setTimeout(() => circles[i].classList.remove("fired"), 700)
+    }
+  }
+}
+
+function fireStars() {
+  let randomNum = Math.floor((Math.random())*15)
+  for(let i = 0; i < stars.length; i++) {
+    if (stars[randomNum] === stars[i]) {
+      stars[i].classList.add("fired")
+      setTimeout(() => stars[i].classList.remove("fired"), 1200)
+    }
+  }
+}
+
+if(!header.classList.contains("daymode")){
+  const circleInterval = setInterval(fireCircles, 300)
+  const starInterval = setInterval(fireStars, 400)
+}else if (header.classList.contains("daymode")){
+  clearInterval(circleInterval, starInterval)
+}
+
+console.log(circles)
+
 // navigation
 
 navToggle.addEventListener("click", () => {
