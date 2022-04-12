@@ -579,7 +579,7 @@ header.daymode nav {
 }
 
 .nav-item:nth-of-type(1) {
-  background: rgba(174, 254, 255, 0.9);
+  background: rgb(174, 254, 255);
   text-shadow: 1px 2px var(--clr-aqua-accent);
 }
 .nav-item:nth-of-type(2) {
