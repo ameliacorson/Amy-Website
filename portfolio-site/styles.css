@@ -92,6 +92,7 @@ header.project-header h1 {
 .sticky-bar {
   display: flex;
   position: fixed;
+  z-index: 20;
   top: 32px;
   right: 65px;
   align-items: center;
@@ -719,7 +720,6 @@ header.daymode .svg-3 {
 
 header.scrolled .sticky-bar {
   transform: translateY(-10px);
-  z-index: 20;
 }
 
 .mobile-bar {
