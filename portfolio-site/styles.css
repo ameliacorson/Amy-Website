@@ -841,12 +841,12 @@ header.scrolled .hamburger::after {
     margin-top: 2em;
   }
 
-  /* .fa-star {
+  .fa-star {
     display: none;
   }
   .circle {
     display: none;
-  } */
+  }
 
   .cloud-1 {
     font-size: 55px;
