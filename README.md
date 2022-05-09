@@ -1,5 +1,5 @@
 
-# Personal Portfolio Site
+# Personal Portfolio Site - [Live Site][liveSite]
 
 A personal portfolio designed to showcase my development work.
 
@@ -25,3 +25,4 @@ A personal portfolio designed to showcase my development work.
 - Javascript
 - Deployed with Netlify
 
+[liveSite]: amycorson.com
