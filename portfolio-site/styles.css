@@ -15,9 +15,9 @@ html {
   --clr-off-white: rgb(250, 249, 246);
   --clr-dark-base: rgb(7, 34, 39);
   --clr-dark-75op: rgba(7, 34, 39, 0.75);
-  --clr-teal-accent: rgb(53, 133, 139);
+  --clr-teal-accent: #35878d;
   --clr-teal-50op: rgba(53, 133, 139, 0.5);
-  --clr-aqua-accent: rgb(79, 189, 186);
+  --clr-aqua-accent: #4fbdba;
   --clr-aqua-50op: rgba(79, 189, 186, 0.5);
   --clr-light: rgb(174, 254, 255);
 
@@ -25,7 +25,7 @@ html {
 
   --clr-day-blue: #64c9cf;
   --clr-day-paleyellow: #fde49c;
-  --clr-day-gold: rgb(255, 183, 64);
+  --clr-day-gold: #ffb740;
   --clr-day-orange: #df711b;
   --clr-day-drk: #cc5901;
 
@@ -294,92 +294,10 @@ header.daymode .theme-transition-background {
   font-size: 6px;
 }
 
-header.daymode .circle,
 header.daymode .fa-star {
   transform: translateY(-20px);
   transition: all 300ms ease-in;
   opacity: 0%;
-}
-
-.circle {
-  width: 10px;
-  height: 10px;
-  background-color: white;
-  opacity: 55%;
-  border-radius: 50%;
-  position: absolute;
-  transition: background-color 3s ease-out, box-shadow 3s ease-out,
-    opacity 3s ease-out, transform 1s ease-out;
-  box-shadow: 0px 0px 0px 5px rgba(255, 255, 255, 0);
-  z-index: 5;
-}
-
-.circle:hover,
-.circle.fired {
-  opacity: 95%;
-  transition: all 1000ms ease-in;
-  box-shadow: 0px 0px 0px 7px rgba(255, 255, 255, 0.2);
-}
-
-.circle-1 {
-  top: 10%;
-  right: 30%;
-  width: 3px;
-  height: 3px;
-}
-.circle-2- {
-  top: 20%;
-  right: 10%;
-  width: 5px;
-  height: 5px;
-}
-.circle-3 {
-  top: 30%;
-  right: 50%;
-  width: 8px;
-  height: 8px;
-}
-.circle-4 {
-  top: 24%;
-  right: 55%;
-  width: 5px;
-  height: 5px;
-}
-.circle-5 {
-  top: 30%;
-  right: 80%;
-  width: 3px;
-  height: 3px;
-}
-.circle-6 {
-  top: 30%;
-  right: 5%;
-  width: 5px;
-  height: 5px;
-}
-.circle-7 {
-  top: 13%;
-  right: 66%;
-  width: 4px;
-  height: 4px;
-}
-.circle-8 {
-  top: 3%;
-  right: 90%;
-  width: 3px;
-  height: 3px;
-}
-.circle-9 {
-  top: 33%;
-  right: 98%;
-  width: 5px;
-  height: 5px;
-}
-.circle-10 {
-  top: 37%;
-  right: 70%;
-  width: 3px;
-  height: 3px;
 }
 
 /* clouds */
@@ -431,14 +349,127 @@ header.daymode .fa-star {
 }
 
 @keyframes floatClose {
-  from{transform: translateX(0) scalex(2);}
-  to{transform: translateX(100%) scalex(2);}
+  from {
+    transform: translateX(0) scalex(2);
+  }
+  to {
+    transform: translateX(100%) scalex(2);
+  }
 }
 
 @keyframes floatFar {
-  from{transform: translateX(0) scalex(1.4);}
-  to{transform: translateX(100%) scalex(1.4);}
+  from {
+    transform: translateX(0) scalex(1.4);
+  }
+  to {
+    transform: translateX(100%) scalex(1.4);
+  }
 }
+
+/* svg waves */
+
+header svg {
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  fill-opacity: 25%;
+  min-width: 1000px;
+  max-height: 300px;
+  width: 200%;
+}
+
+header.project-header svg {
+  display: none;
+
+}
+
+header.daymode svg {
+  fill-opacity: 40%;
+}
+
+.svg-2 {
+  fill: var(--clr-aqua-accent);
+  animation: wave1 25s infinite;
+  animation-direction: alternate;
+  animation-timing-function: ease-in-out
+  
+}
+
+.svg-3 {
+  fill: var(--clr-light);
+  animation: wave1 25s infinite;
+  animation-direction: alternate-reverse;
+  animation-timing-function: linear;
+}
+
+header.daymode .svg-3 {
+  fill-opacity: 25%;
+}
+
+@keyframes wave1 {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%)
+  }
+}
+
+/* sailboat */
+
+header .sailboat-container {
+  position: absolute;
+  bottom: 28vh;
+  right: 40%;
+  z-index: 20;
+
+}
+
+header .sailboat-container .sailboat {
+  position: absolute;
+  height: 75px;
+  animation: sail-bob 10s infinite;
+  animation-timing-function: linear;
+}
+
+header .sailboat-container .sailboat-day {
+  opacity: 0%;
+  transition: opacity .25s ease-in-out;
+}
+header .sailboat-container .sailboat-night {
+  opacity: 100%;
+  z-index: 20;
+  transition: opacity .25s ease-in-out;
+}
+
+header.daymode .sailboat-container .sailboat-day {
+  opacity: 100%;
+  transition: opacity .25s ease-in-out;
+}
+
+header.daymode .sailboat-container .sailboat-night {
+  opacity: 0%;
+  transition: opacity .25s ease-in-out;
+}
+
+@keyframes sail-bob {
+  0% {transform: translateY(0);}
+  25% {transform: translateY(4px) rotate(3deg);}
+  50% {transform: translateY(-3px) rotate(-4deg);}
+  62% {transform: translateY(0px) rotate(2deg)}
+  75% {transform: translateY(3px) rotate(-2deg);}
+  95% {transform: translateY(-4px) rotate(3deg);}
+  100% {transform: translateY(0) rotate(0deg);}
+}
+
+@media (max-width: 500px) {
+  header .sailboat-container {
+    bottom: 25vh;
+  }
+}
+
 
 /* header */
 
@@ -678,45 +709,8 @@ header.daymode .hamburger::after {
   bottom: 7px;
 }
 
-/* svg designs */
 
-header svg {
-  margin: 0;
-  padding: 0;
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  fill-opacity: 25%;
-  min-width: 1000px;
-  width: 100%;
-}
-
-header.project-header svg {
-  display: none;
-}
-
-header.daymode svg {
-  fill-opacity: 40%;
-}
-.svg-1 {
-  fill: var(--clr-teal-accent);
-}
-
-.svg-2 {
-  fill: var(--clr-aqua-accent);
-}
-
-.svg-3 {
-  fill: var(--clr-light);
-}
-
-header.daymode .svg-3 {
-  fill-opacity: 25%;
-}
-
-.svg-4 {
-  fill: var(--clr-aqua-accent);
-}
+/* header bar */
 
 header.scrolled .sticky-bar {
   transform: translateY(-10px);
@@ -754,7 +748,6 @@ header.scrolled .sticky-bar {
 }
 
 .tooltip .tooltiptext {
-
   width: 120px;
   font-family: var(--ff-primary);
   font-size: 1rem;
@@ -842,9 +835,6 @@ header.scrolled .hamburger::after {
   }
 
   .fa-star {
-    display: none;
-  }
-  .circle {
     display: none;
   }
 
@@ -1205,23 +1195,21 @@ img.project-cover-img {
 footer .dark-section {
   width: 100%;
   margin: 0;
-  
 }
 
 .credit {
-    margin: 1em 0;
-    padding: 1.5em 0;
-    color: var(--clr-off-white);
-    opacity: 65%;
+  margin: 1em 0;
+  padding: 1.5em 0;
+  color: var(--clr-off-white);
+  opacity: 65%;
 }
 .credit p {
   margin: 0;
 }
 
 .credit i {
-margin-right: 10px;
+  margin-right: 10px;
 }
-
 
 @media (max-width: 650px) {
   .project {
